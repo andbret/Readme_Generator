@@ -26,7 +26,7 @@ function generateMarkdown(answer) {
 
   ## License
 
-  ![shield](https://img.shields.io/static/v1?label=License&message=${answer.license}&color=green)
+  This project is licensed under the ![shield](https://img.shields.io/static/v1?label=License&message=${answer.license}&color=green)
   
 
   ## Credits
@@ -39,9 +39,9 @@ function generateMarkdown(answer) {
 
   ## Questions
 
-  ${answer.questions}
+  If you have any questions, check out my github (Username:${answer.questions})
 
-  ${answer.email}
+  Or reach out directly at: ${answer.email}
 `;
 }
 
