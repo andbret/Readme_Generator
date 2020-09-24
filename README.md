@@ -21,7 +21,11 @@
 
   Once everything is installed, simply type “node index.js” in the terminal. The user will then be confronted with a series of prompts where they type out the necessary information. After all the prompts are completed, it will write the file into the same folder. 
 
-![video](demo.mp4)
+<figure class="video_container">
+  <video controls="true" allowfullscreen="true">
+    <source src="demo.mp4" type="video/mp4">
+  </video>
+</figure>
 
   ## License
 
