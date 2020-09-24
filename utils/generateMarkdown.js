@@ -1,7 +1,7 @@
 // function to generate markdown for README
 function generateMarkdown(answer) {
   return `
-  ## ${data.title}
+  ## ${answer.title}
 
   * [Description](#description)
   * [Installation](#installation)
@@ -14,33 +14,34 @@ function generateMarkdown(answer) {
   
   ## Description
 
-  ${data.description}
+  ${answer.description}
 
   ## Installation
 
-  ${data.installation}
+  ${answer.installation}
 
   ## Usage
 
-  ${data.usage}
+  ${answer.usage}
 
   ## License
 
-  ${data.license}
+  ![shield](https://img.shields.io/static/v1?label=License&message=${answer.license}&color=green)
+  
 
   ## Credits
 
-  ${data.credits}
+  ${answer.credits}
 
   ## Tests
 
-  ${data.tests}
+  ${answer.tests}
 
   ## Questions
 
-  ${data.questions}
+  ${answer.questions}
 
-  ${data.email}
+  ${answer.email}
 `;
 }
 

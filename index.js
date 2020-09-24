@@ -1,6 +1,6 @@
 var inquirer = require("inquirer");
 var fs = require('fs');
-// const generateMarkdown = require("./utils/generateMarkdown");
+const generateMarkdown = require("./utils/generateMarkdown");
 
 
 inquirer.prompt([
@@ -34,9 +34,9 @@ inquirer.prompt([
         name: "license",
         choices: [
             "MIT",
-            "APACHE 2.0",
-            "GPL 3.0",     
-            "BSD 3"
+            "APACHE-2.0",
+            "GPL-3.0",     
+            "BSD-3"
         ],
         default: "MIT"
     },
@@ -64,11 +64,14 @@ inquirer.prompt([
         name: "email",
         default: "and.bretnall@gmail.com"
     }
-]) .then(function(answer) {
+]) 
+
+.then ((answer) => {
         
           var filename = answer.title+ ".md";
         
-          fs.writeFile(filename, generateMarkdown(answer), function(err) {
+
+          return fs.writeFileSync(filename, generateMarkdown(answer), function(err) {
         
             if (err) {
               return console.log(err);
@@ -78,50 +81,50 @@ inquirer.prompt([
         
           });
         });
-        function generateMarkdown(answer) {
-            return `
-            ## ${answer.title}
+//         function generateMarkdown(answer) {
+//             return `
+// ## ${answer.title}
           
-            * [Description](#description)
-            * [Installation](#installation)
-            * [Usage](#usage)
-            * [License](#license)
-            * [Credits](#credits)
-            * [Tests](#tests)
-            * [Questions](#questions)
+// * [Description](#description)
+// * [Installation](#installation)
+// * [Usage](#usage)
+// * [License](#license)
+// * [Credits](#credits)
+// * [Tests](#tests)
+// * [Questions](#questions)
           
             
-            ## Description
+// ## Description
           
-            ${answer.description}
+// ${answer.description}
           
-            ## Installation
+// ## Installation
           
-            ${answer.installation}
+// ${answer.installation}
           
-            ## Usage
+// ## Usage
           
-            ${answer.usage}
+// ${answer.usage}
           
-            ## License
+// ## License
           
-            ${answer.license}
+// ${answer.license}
           
-            ## Credits
+// ## Credits
           
-            ${answer.credits}
+// ${answer.credits}
           
-            ## Tests
+// ## Tests
           
-            ${answer.tests}
+// ${answer.tests}
           
-            ## Questions
+// ## Questions
           
-            ${answer.questions}
+// ${answer.questions}
           
-            ${answer.email}
-          `;
-          }
+// ${answer.email}
+        //   `;
+        //   }
 //    fs.writeFile("MYREADME.md", generateMarkdown(answer), function(err) {
 
 //     if (err) {
@@ -131,6 +134,5 @@ inquirer.prompt([
 //     console.log("Success!");
   
 //   });
-
 
 
